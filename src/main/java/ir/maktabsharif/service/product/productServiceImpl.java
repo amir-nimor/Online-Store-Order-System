@@ -17,7 +17,7 @@ public class productServiceImpl extends BaseServiceImpl<Product, Long, productRe
     @Override
     protected void validation(Product product) throws ValidationException {
         if (product.getQuantity() < 0) throw new ValidationException("your quantity is negative");
-        if (product.getPrice().compareTo(BigDecimal.ZERO) > 0) throw new ValidationException("your price is negative");
+        if (product.getPrice().compareTo(BigDecimal.ZERO) < 0) throw new ValidationException("your price is negative");
         if (product.getName().isBlank()) throw new ValidationException("your name is empty");
     }
 }

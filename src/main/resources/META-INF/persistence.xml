@@ -3,11 +3,12 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
              version="3.2">
-    <persistence-unit name="store">
-
+    <persistence-unit name="storeA">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+        <class>ir.maktabsharif.model.User</class>
+        <class>ir.maktabsharif.model.Product</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>

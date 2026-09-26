@@ -24,14 +24,22 @@ public class User extends BaseModel<Integer>{
     @Check(constraints = "balance >= 0")
     private BigDecimal balance;
 
+
+    @Column(nullable = false,unique = false)
+    private String username;
+    @Column(nullable = false)
+    private String password;
+
     @ManyToMany
     private List<Product> products;
 
-    public User(String fullName, String phoneNumber, AddressUser addressUser, BigDecimal balance) {
+    public User(String fullName, String phoneNumber, AddressUser addressUser, BigDecimal balance,String username,String password) {
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.addressUser = addressUser;
         this.balance = balance;
+        this.username = username;
+        this.password = password;
         this.products = new ArrayList<>();
     }
 

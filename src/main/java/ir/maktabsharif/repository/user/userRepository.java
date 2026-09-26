@@ -4,4 +4,5 @@ import ir.maktabsharif.model.User;
 import ir.maktabsharif.repository.BaseRepository.BaseRepository;
 
 public interface userRepository extends BaseRepository<User,Integer> {
+    User findByUsernameAndPassword(String username,String password);
 }
