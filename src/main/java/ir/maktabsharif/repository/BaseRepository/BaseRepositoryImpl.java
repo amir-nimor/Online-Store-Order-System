@@ -7,7 +7,7 @@ import ir.maktabsharif.util.HibernateUtil;
 
 import java.util.List;
 
-public class BaseRepositoryImpl<T extends BaseModel<ID>, ID extends Number> implements BaseRepository<T, ID> {
+public abstract class BaseRepositoryImpl<T extends BaseModel<ID>, ID extends Number> implements BaseRepository<T, ID> {
 
     private Class<T> entity;
 
