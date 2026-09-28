@@ -69,6 +69,7 @@ public class Product extends BaseModel<Long>{
     @Override
     public String toString() {
         return "Product{" +
+                "id='" + super.getId() + '\'' +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +

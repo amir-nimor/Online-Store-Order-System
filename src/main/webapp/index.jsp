@@ -13,5 +13,8 @@
 <a href="Login">Login</a><br>
 <a href="singUp">singUp</a><br>
 <a href="Profile">Profile</a><br>
+<a href="productList">productList</a><br>
+<a href="admin">admin</a><br>
+
 </body>
 </html>

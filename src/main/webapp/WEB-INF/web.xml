@@ -8,4 +8,26 @@
         <location>/WEB-INF/exception/404.jsp</location>
     </error-page>
 
+
+    <filter>
+        <filter-name>auth</filter-name>
+        <filter-class>ir.maktabsharif.controller.filter.AuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>auth</filter-name>
+        <url-pattern>/page/productList.jsp</url-pattern>
+        <url-pattern>/addProduct</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>admin</filter-name>
+        <filter-class>ir.maktabsharif.controller.filter.AdminFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>admin</filter-name>
+        <url-pattern>/addProduct</url-pattern>
+    </filter-mapping>
 </web-app>

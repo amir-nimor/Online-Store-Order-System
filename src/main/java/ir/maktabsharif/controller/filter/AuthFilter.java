@@ -10,7 +10,10 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebFilter("/Profile")
+@WebFilter(urlPatterns = {
+        "/Profile",
+        "/productList"
+})
 public class AuthFilter implements Filter {
 
 

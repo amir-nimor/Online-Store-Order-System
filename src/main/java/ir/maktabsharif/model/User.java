@@ -30,6 +30,9 @@ public class User extends BaseModel<Integer>{
     @Column(nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private Rols rols;
+
     @ManyToMany
     private List<Product> products;
 
@@ -41,6 +44,14 @@ public class User extends BaseModel<Integer>{
         this.username = username;
         this.password = password;
         this.products = new ArrayList<>();
+    }
+
+    public Rols getRols() {
+        return rols;
+    }
+
+    public void setRols(Rols rols) {
+        this.rols = rols;
     }
 
     public User() {
@@ -86,6 +97,7 @@ public class User extends BaseModel<Integer>{
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
+
 
     @Override
     public String toString() {

@@ -1,6 +1,7 @@
 package ir.maktabsharif.controller;
 
 import ir.maktabsharif.model.AddressUser;
+import ir.maktabsharif.model.Rols;
 import ir.maktabsharif.model.User;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -40,7 +41,14 @@ public class Login extends HttpServlet {
         String postalcode = req.getParameter("zipcode");
         BigDecimal balance = BigDecimal.valueOf(Integer.parseInt(req.getParameter("balance")));
 
+        Rols rols = Rols.USER;
+
+        if (username.equals("admin")&&password.equals("admin")){
+            rols = Rols.ADMIN;
+        }
+
         User user = new User(fullname, phonenumber, new AddressUser(city, street, postalcode), balance, username, password);
+        user.setRols(rols);
 
         HttpSession session = req.getSession();
         String Token = generatToken(username, password);
@@ -53,6 +61,7 @@ public class Login extends HttpServlet {
         session.setAttribute("city", city);
         session.setAttribute("street", street);
         session.setAttribute("postalcode", postalcode);
+        session.setAttribute("rols", rols);
         session.setAttribute("balance", balance);
 
 
